@@ -1,0 +1,59 @@
+﻿@model CollegeApp.ViewModel.StudentVM
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details of @Model.StudentName</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6 mx-auto box-shadow" style="padding:20px;">
+
+        <div class="card " style="padding:20px;">
+            <div class="mx-auto" style="background:#ccc;padding:20px;">
+                <i class=" fa fa-user" style="font-size:200px;"></i>
+            </div>
+          <div class="card-body mx-auto">
+              <center><h4 class="card-title">@Model.StudentName</h4></center>
+              <p class="card-text"><strong>Registration Number</strong></p>
+              <p class="card-text text-center">@Model.RegistrationNumber</p>
+            
+          </div>
+        </div>
+
+        <div style="padding:20px;">
+            <table class="table table-striped">
+                <tr>
+                    <th colspan="2"><center><strong>List of Courses Offered</strong></center></th>
+                    
+                </tr>
+                <tr>
+                    <th>
+                        Course Name
+                    </th>
+                    <th>Course Code</th>
+                </tr>
+                @foreach(var course in Model.Courses )
+                { 
+                     
+                   
+                        <tr>
+                            <td>
+                               @course.CourseName
+                            </td>
+                            <td>
+                               @course.CourseCode
+                            </td>
+                        </tr>
+                }
+
+
+            </table>
+        </div>
+
+
+    </div>
+</div>
+
+
